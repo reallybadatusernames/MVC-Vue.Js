@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31402.337
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mvc.vuejs.app", "mvc.vuejs.example\mvc.vuejs.app.csproj", "{94F2FC88-454A-4163-9C36-FFB70BDB76F4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mvc.vuejs.infrastructure", "mvc.vuejs.infrastructure\mvc.vuejs.infrastructure.csproj", "{3AF31E9F-FE4F-4C8C-8469-3CEC2DE704F4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{94F2FC88-454A-4163-9C36-FFB70BDB76F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94F2FC88-454A-4163-9C36-FFB70BDB76F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94F2FC88-454A-4163-9C36-FFB70BDB76F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94F2FC88-454A-4163-9C36-FFB70BDB76F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3AF31E9F-FE4F-4C8C-8469-3CEC2DE704F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AF31E9F-FE4F-4C8C-8469-3CEC2DE704F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3AF31E9F-FE4F-4C8C-8469-3CEC2DE704F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3AF31E9F-FE4F-4C8C-8469-3CEC2DE704F4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E9373A3B-70BA-4AAC-B413-D21EDF90B839}
+	EndGlobalSection
+EndGlobal
