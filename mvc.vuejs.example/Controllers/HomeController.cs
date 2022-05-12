@@ -27,7 +27,7 @@ namespace mvc.vuejs.example.Controllers
         [HttpGet, Route("games/get-games")]
         public async Task<JsonResult> GetGames()
         {
-            return Json((await _queryDispatcher.DispatchAsync<GetGames.Query, GetGames.Result>(new GetGames.Query())).Games, JsonRequestBehavior.AllowGet);
+            return Json((await _queryDispatcher.DispatchAsync<GetGames.Query, GetGames.Result>(new GetGames.Query())), JsonRequestBehavior.AllowGet);
         }
 
         [HttpPost, Route("games/delete-game")]

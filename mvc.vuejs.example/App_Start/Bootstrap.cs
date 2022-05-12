@@ -7,6 +7,7 @@ using SimpleInjector.Lifestyles;
 using SimpleInjector.Integration.Web.Mvc;
 
 using mvc.vuejs.infrastructure;
+using mvc.vuejs.infrastructure.Context;
 
 namespace mvc.vuejs.example.App_Start
 {
@@ -22,6 +23,7 @@ namespace mvc.vuejs.example.App_Start
 
             container.Register<QueryDispatcher>();
             container.Register<CommandDispatcher>();
+            container.Register<GameContext>(Lifestyle.Singleton);
 
             var queryHandlers = new[] { typeof(IQueryHandler<,>).Assembly };
             container.Collection.Register(typeof(IQueryHandler<,>), queryHandlers);
@@ -36,11 +38,11 @@ namespace mvc.vuejs.example.App_Start
             container.Collection.Register(typeof(ICommandHandlerAsync<>), queryAsyncHandlers);
 
             //CQS Types
-            var assembly = AppDomain.CurrentDomain.GetAssemblies().Where(a => a.FullName.ToLower().Contains("lcinfrastructure.service")).FirstOrDefault();
+            var assembly = AppDomain.CurrentDomain.GetAssemblies().Where(a => a.FullName.ToLower().Contains("mvc.vuejs.infrastructure")).FirstOrDefault();
             if (assembly != null)
             {
                 var registrations = from type in assembly.GetExportedTypes()
-                                    where !string.IsNullOrEmpty(type.Namespace) && type.Namespace.StartsWith("LCInfrastructure.Service")
+                                    where !string.IsNullOrEmpty(type.Namespace) && type.Namespace.ToLower().StartsWith("mvc.vuejs.infrastructure")
                                     from service in type.GetInterfaces()
                                     select new { service, implementation = type };
 
@@ -48,7 +50,8 @@ namespace mvc.vuejs.example.App_Start
                 {
                     if (reg.implementation.Name == "ApplicationUserManager" ||
                         reg.implementation.Name == "ApplicationPasswordValidator" ||
-                        reg.implementation.Name == "IJob")
+                        reg.implementation.Name == "IJob"
+                        || reg.implementation.Name == "GameContext")
                         continue;
 
                     try

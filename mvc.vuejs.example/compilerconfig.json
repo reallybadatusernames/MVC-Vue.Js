@@ -1,0 +1,10 @@
+﻿[
+  {
+    "outputFile": "client/site.min.css",
+    "inputFile": "client/scss/__site.scss"
+  },
+  {
+    "outputFile": "client/js/games.min.js",
+    "inputFile": "client/js/games.js"
+  }
+]
