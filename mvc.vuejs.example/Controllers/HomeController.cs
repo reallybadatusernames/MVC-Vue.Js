@@ -40,7 +40,7 @@ namespace mvc.vuejs.example.Controllers
             }
             catch (CommandValidationException cex)
             {
-                return Json(new { Succeeded = true, Error = cex.Message }, JsonRequestBehavior.AllowGet);
+                return Json(new { Succeeded = false, Error = cex.Message }, JsonRequestBehavior.AllowGet);
             }
         }
 
@@ -54,7 +54,7 @@ namespace mvc.vuejs.example.Controllers
             }
             catch (CommandValidationException cex)
             {
-                return Json(new { Succeeded = true, Error = cex.Message }, JsonRequestBehavior.AllowGet);
+                return Json(new { Succeeded = false, Error = cex.Message }, JsonRequestBehavior.AllowGet);
             }
         }
     }
